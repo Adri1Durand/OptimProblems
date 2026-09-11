@@ -14,7 +14,7 @@ RUN_SEEDS = [0]              # seed(s) pour la répétition des optimisations (1
 # ---------------------------------------------------------------------------
 # Budget et DOE
 # ---------------------------------------------------------------------------
-BUDGET_MAX_EVAL = 1000       # nombre max de n-évaluations de la fonction objectif
+BUDGET_MAX_SIMPLEX_EVAL = 500       # nombre max de (n+1) évaluations de la fonction objectif
 DOE_SIZE = 10                # taille du DOE initial (LHS)
 
 # ---------------------------------------------------------------------------

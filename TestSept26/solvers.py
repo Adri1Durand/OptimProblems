@@ -11,19 +11,14 @@ import os
 import sys
 import numpy as np
 import PyNomad
-
-from pathlib import Path
-
-base_dir = Path(__file__).resolve().parent.parent.parent  # .../DFO
-# sys.path.append(str(base_dir / "GCO"))
-sys.path.append(str(base_dir / "GCO"))
-# from GCO import GCO, mads_suboptimizer
-# Needs to import GCO library. 
-
-from config import BUDGET_MAX_EVAL, DOE_SIZE, DOE_SEED, RESULTS_DIR
+from GCO import GCO, mads_suboptimizer
 
 
-def run_gco(problem, subspace_dimension, subspace_method="PLS", budget=BUDGET_MAX_EVAL, contraction=0.5,gamma=0.9, result_dir=RESULTS_DIR):
+from config import BUDGET_MAX_SIMPLEX_EVAL, DOE_SIZE, DOE_SEED, RESULTS_DIR
+
+
+
+def run_gco_mads(problem, subspace_dimension, subspace_method="PLS", budget=BUDGET_MAX_SIMPLEX_EVAL, contraction=0.5,gamma=0.9, result_dir=RESULTS_DIR):
     """
     Lance GCO avec MADS comme sous-optimiseur et sélection de sous-espace PLS.
 
@@ -129,5 +124,5 @@ def run_mads(problem, budget, result_dir=RESULTS_DIR):
 
     result = PyNomad.optimize(bb,[],lb,ub,params)
     return 1 
-    
+
 
