@@ -1,3 +1,6 @@
 .venv/
 __pycache__/
 *.json
+S2MPJ/
+results/
+cache_*/
